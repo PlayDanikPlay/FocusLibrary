@@ -14,10 +14,8 @@ if not game:IsLoaded() then
     notLoaded:Destroy()
 end
 
-if game:IsLoaded() then
- local ScreenGui = Instance.new("ScreenGui", CoreGui)
- ScreenGui.Name = "FocusLib"
-end
+local ScreenGui = Instance.new("ScreenGui", CoreGui)
+ScreenGui.Name = "FocusLib"
 
 local Library = {}
 
