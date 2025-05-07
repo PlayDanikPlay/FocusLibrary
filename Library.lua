@@ -22,6 +22,7 @@ end
 local Library = {}
 
 function Library.new(Config)
+  Name = Config[1]
   local Frame = Instance.new("Frame", CoreGui.FocusLib)
-  Frame.Name = Config[1]
+  Frame.Name = Name
 end
