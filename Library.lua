@@ -7,20 +7,26 @@ local CoreGui = game:GetService("CoreGui")
 local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
 
-if not game:IsLoaded() then
-    local Message = Instance.new("Message", CoreGui)
-    Message.Text = "FocusLib is waiting for the game to load"
-    game.Loaded:Wait()
-    notLoaded:Destroy()
-end
-
-local ScreenGui = Instance.new("ScreenGui", CoreGui)
-ScreenGui.Name = "FocusLib"
-
 local Library = {}
 
-function Library.new(Config)
-  Name = Config[1]
-  local Frame = Instance.new("Frame", CoreGui.FocusLib)
-  Frame.Name = Name
+for Index, V in next, CoreGui:GetChildren() do
+	if V.Name == "FocusLib" then
+		V:Destroy()
+	end
 end
+
+function Library:CreateWindow(Config)
+end
+
+local ConfigName = "FocusConfig.JSON"
+
+pcall(function()
+
+if not pcall(function() readfile(Name) end) then
+	writefile(Name, game:service"HttpService":JSONEncode(SettingsT))
+end
+
+Settings = game:service"HttpService":JSONEncode(readfile(Name))
+end)
+
+local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
