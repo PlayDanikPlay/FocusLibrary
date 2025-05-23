@@ -1,7 +1,5 @@
 local Library = {}
 
-function Library.New(Title)
-  print(Title)
-end
+print("Hey")
 
 return Library
