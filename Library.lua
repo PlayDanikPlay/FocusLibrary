@@ -1,7 +1,7 @@
 local Library = {}
 
-function Library.New(Config)
-  print(Config[1])
+function Library.New(Title)
+  print(Title)
 end
 
 return Library
