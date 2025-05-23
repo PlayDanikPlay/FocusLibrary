@@ -1,5 +1,7 @@
 local Library = {}
 
-print("Hey")
+function Library.new(Title)
+  print(Title")
+end
 
 return Library
